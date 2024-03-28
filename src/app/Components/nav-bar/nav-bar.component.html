@@ -1,35 +1,18 @@
-<nav class="py-6 relativ bg-principal2 text-letra font-montserrat font-thin">
+<nav
+  class="py-6 relativ bg-principal2 font-montserrat flex justify-around items-center"
+>
+  <a href="#" class="text-xl font-normal">La Casa Fundanal</a>
   <!-- bg-[#c8bdb4] -->
-  <div class="w-3/6 mx-auto">
-    <div class="text-lg flex flex-row items-center justify-center">
+  <div class="">
+    <div class="text-md flex flex-row items-center">
       <div>
-        <a href="#" class="border-t-[3px] border-fondo2 py-1">INICIO</a>
-        <a
-          href="#"
-          class="border-t border-fondo2 py-1 ml-5 hover:border-t-[3px]"
-          >LA CASA</a
-        >
-        <a
-          href="#"
-          class="border-t border-fondo2 py-1 ml-5 hover:border-t-[3px]"
-          >TARIFAS Y DISPONIBILIDAD</a
-        >
-        <a
-          href="#"
-          class="border-t border-fondo2 py-1 ml-5 hover:border-t-[3px]"
-          >CONTACTO</a
-        >
+        <a routerLink="/" class="py-1">INICIO</a>
+        <a routerLink="/casa-principal" class="py-1 ml-5">LA PRINCIPAL</a>
+        <a routerLink="/casa-atico" class="py-1 ml-5">ÁTICO DUPLEX</a>
+        <a routerLink="/about-us" class="py-1 mx-5">CONTÁCTANOS</a>
       </div>
-      <!-- <div
-          class="px-3 py-1 border border-black w-24 absolute right-10 flex justify-between items-center"
-        >
-          <h1>ES</h1>
-          <img src="Img/flecha-abajo.png" class="object-fit h-4 w-4" alt="" />
-        </div> -->
 
-      <div
-        class="group w-24 absolute top-2 right-10 flex flex-col items-center"
-      >
+      <div class="group flex w-24 flex-col">
         <button
           class="outline-none border px-3 py-1 border-fondo2 focus:outline-none flex items-center justify-between w-full"
         >
@@ -43,7 +26,7 @@
         </button>
         <ul
           id=""
-          class="border border-t-0 border-fondo2 w-24 px-3 py-1 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out"
+          class="absolute top-[58px] z-0 border border-t-0 border-fondo2 w-24 px-3 py-1 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out"
         >
           <li id="" class=""><a href="">EN</a></li>
         </ul>

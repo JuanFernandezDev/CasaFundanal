@@ -1,0 +1,18 @@
+{
+  "Home": {
+    "Menu": {
+      "Inicio": "Index",
+      "Contacto": "Contact"
+    },
+    "TituloPrincipal": "Main Page from my web",
+    "RealizadoPor": "Made by: ",
+    "Deportes": [
+      {
+        "Nombre": "Football"
+      },
+      {
+        "Nombre": "Basketball"
+      }
+    ]
+  }
+}

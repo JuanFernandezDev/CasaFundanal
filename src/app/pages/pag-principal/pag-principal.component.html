@@ -1,107 +1,206 @@
-<div class="bg-fondo2 font-montserrat">
-  <app-nav-bar />
+<div class="bg-white font-montserrat mx-auto">
+  <!-- max-w-[1920px] -->
 
-  <div class="w-full text-center">
-    <h1 class="mt-16 text-5xl text-principal1 tracking-wider">
-      CASA RURAL FUNDANAL
-    </h1>
-  </div>
-
-  <div class="mt-16 flex">
-    <div class="w-full">
+  <div class="flex flex-col">
+    <div class="w-full flex flex-col justify-center relative">
       <img
-        src="assets/Img/FotoPrincipal2.jpg"
-        class="w-[900px] h-[700px] object-fit ml-72 rounded-lg"
+        src="assets/Img/PaginaNueva/Principal.jpeg"
+        class="w-full object-fit"
         alt=""
       />
 
       <div
-        class="absolute bg-principal2 py-10 px-14 right-[350px] top-[300px] rounded-lg"
+        class="text-white absolute w-5/12 min-[1318px]:w-1/3 top-1/4 min-[1441px]:top-1/3 left-44 xl:left-56 text-base lg:text-xl"
       >
-        <h1 class="text-letra text-2xl mb-4">UN HOGAR EN HOZ DE JACA</h1>
-        <p class="w-[360px] text-letra">
-          I-1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          impedit maiores molestiae mollitia atque harum, repellat accusantium
-          id. Praesentium nesciunt excepturi asperiores esse facere quam
-          perferendis repellendus earum saepe distinctio!
-        </p>
-        <div
-          class="bg-fondo2 px-2 py-1 w-36 mt-64 text-[#645e5a] hover:bg-[#645e5a] hover:text-letra rounded"
+        <h1
+          class="border-b-2 text-xl lg:text-3xl min-[1441px]:text-5xl pb-2 mb-4 inline-block"
         >
-          <h3 class="text-center">RESERVAR</h3>
+          UN HOGAR EN HOZ DE JACA
+        </h1>
+        <p class="mb-4 w-11/12">
+          El mejor sitio para descansar y disfrutar de la naturaleza con tus
+          familiares y amigos
+        </p>
+        <button class="bg-transparent border px-3 py-2">RERSERVA AHORA</button>
+      </div>
+    </div>
+
+    <div class="w-full flex flex-col justify-center relative">
+      <img
+        src="assets/Img/PaginaNueva/Principal2.jpeg"
+        class="w-full object-fit"
+        alt=""
+      />
+
+      <div
+        class="card w-3/4 bg-white absolute top-[-150px] left-0 flex py-12 lg:py-12 xl:py-24 min-[1441px]:py-36"
+      >
+        <p-carousel
+          [value]="reviews"
+          [numVisible]="1"
+          [numScroll]="1"
+          [circular]="true"
+          [responsiveOptions]="responsiveOptions"
+          [autoplayInterval]="5000"
+          class="w-full"
+        >
+          <ng-template let-review pTemplate="item">
+            <div class="text-center py-5 w-3/4 mx-auto">
+              <h3 class="mb-8 text-2xl lg:text-3xl min-[1441px]:text-4xl">
+                "{{ review.titulo }}"
+              </h3>
+              <h4
+                class="mt-0 mb-5 text-base lg:text-xl min-[1441px]:text-2xl text-[#606060]"
+              >
+                {{ review.descripcion }}
+              </h4>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+      <!-- Carousel -->
+    </div>
+
+    <div class="w-full bg-[#EAEAEA] py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-10/12 mx-auto">
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div
-    class="w-full mt-10 bg-principal2 px-80 py-20 text-letra flex font-sans font-thin"
-  >
-    <div class="flex flex-col">
-      <div>
-        <h1 class="text-lg">UN DESCANSO EN LA NATURALEZA</h1>
-        <p class="mt-4">
-          Apartamento precioso, con mucho encanto y unas vistas preciosas en
-          plena naturaleza.
-        </p>
-        <p class="mt-4">/Carmen Fructuoso</p>
-      </div>
-      <div class="mt-24">
-        <h1 class="text-lg">UN DESCANSO EN LA NATURALEZA</h1>
-        <p class="mt-4">
-          Apartamento precioso, con mucho encanto y unas vistas preciosas en
-          plena naturaleza.
-        </p>
-        <p class="mt-4">/Carmen Fructuoso</p>
-      </div>
-    </div>
-    <div class="flex flex-col ml-16">
-      <div>
-        <h1 class="text-lg">UN DESCANSO EN LA NATURALEZA</h1>
-        <p class="mt-4">
-          Apartamento precioso, con mucho encanto y unas vistas preciosas en
-          plena naturaleza.
-        </p>
-        <p class="mt-4">/Carmen Fructuoso</p>
-      </div>
-      <div class="mt-24">
-        <h1 class="text-lg">UN DESCANSO EN LA NATURALEZA</h1>
-        <p class="mt-4">
-          Apartamento precioso, con mucho encanto y unas vistas preciosas en
-          plena naturaleza.
-        </p>
-        <p class="mt-4">/Carmen Fructuoso</p>
-      </div>
-    </div>
-  </div>
+    <div
+      class="flex flex-col p-10 text-center text-[#575757] text-2xl xl:text-3xl 2xl:text-4xl"
+    >
+      <h2
+        class="border-b-2 text-[#575757] border-[#a8a8a8] mb-8 px-10 py-3 max-w-[1400px] text-center mx-auto text-3xl xl:text-4xl"
+      >
+        DISFRUTA DE LAS POSIBILIDADES DEL ENTORNO
+      </h2>
+      <div class="flex flex-wrap mt-10 justify-center gap-16 2xl:gap-36">
+        <div>
+          <img
+            src="assets/Img/PaginaNueva/Kayak.jpg"
+            alt="Imagen de comida 1"
+            class="w-[250px] h-[341px] xl:w-[340px] xl:h-[464px] 2xl:w-[422px] 2xl:h-[577px] object-cover"
+          />
+          <h4 class="mt-8">Disfruta en Kayak</h4>
+        </div>
 
-  <div class="flex pt-16 w-full justify-center pb-10">
-    <div class="w-1/3 h-[400px]">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11730.203074020192!2d-0.3045666!3d42.6920574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd578d92d3185a0f%3A0xeb411e0261f4c03b!2sCasa%20Rural%20Fundanal!5e0!3m2!1ses!2ses!4v1678896693172!5m2!1ses!2ses"
-        width="100%"
-        height="100%"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+        <div>
+          <img
+            src="assets/Img/PaginaNueva/Senderismo.jpg"
+            alt="Imagen de comida 2"
+            class="w-[250px] h-[341px] xl:w-[340px] xl:h-[464px] 2xl:w-[422px] 2xl:h-[577px] object-cover"
+          />
+          <h4 class="mt-8">Rutas inolvidables</h4>
+        </div>
+        <div>
+          <img
+            src="assets/Img/PaginaNueva/Gastronomia.jpg"
+            alt="Imagen de comida
+        3"
+            class="w-[250px] h-[341px] xl:w-[340px] xl:h-[464px] 2xl:w-[422px] 2xl:h-[577px] object-cover"
+          />
+          <h4 class="mt-8">Grastonomía</h4>
+        </div>
+      </div>
     </div>
 
     <div
-      class="w-1/3 ml-10 text-center text-principal1 py-10 font-sans text-lg"
+      class="flex flex-col md:flex-row pt-16 w-full justify-center items-center bg-[#EAEAEA] pb-10 lg:pb-20 mx-auto"
     >
-      <h1>
-        La Casa Rural Fundanal está ubicada en el pueblo de Hoz de Jaca, en el
-        corazón del valle de Tena.
-      </h1>
+      <div class="w-1/3 text-base xl:text-xl pr-10">
+        <h1
+          class="text-2xl xl:text-4xl border-b-2 text-[#575757] border-[#a8a8a8] xl:pb-8 mb-8"
+        >
+          ¿DÓNDE ESTAMOS?
+        </h1>
+        <h2 class="text-[#606060]">
+          La Casa Rural Fundanal está ubicada en el pueblo de Hoz de Jaca, en el
+          corazón del valle de Tena.
+        </h2>
 
-      <p class="py-10">Calle Fundanal 4, 22662, Hoz de Jaca, Aragón.</p>
+        <p class="text-[#606060] mt-8">
+          Calle Fundanal 4, 22662, Hoz de Jaca, Aragón.
+        </p>
 
-      <p class="mt-20 text-principal1">
-        ¿Tienes alguna pregunta? Llámanos al: (+34) 608 578 001
-      </p>
+        <p class="text-[#606060] mt-8">
+          ¿Tienes alguna pregunta? Llámanos al: (+34) 608 578 001
+        </p>
+      </div>
+
+      <div class="h-[400px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93841.66921076598!2d-0.3869673472368196!3d42.692027869627154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd578d92d3185a0f%3A0xeb411e0261f4c03b!2sCasa%20Rural%20Fundanal!5e0!3m2!1ses!2ses!4v1710276895849!5m2!1ses!2ses"
+          class="w-[450px] h-[337px] lg:w-[520px] lg:h-[390px] xl:w-[600px] xl:h-[450px]"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   </div>
 </div>
-<app-footer class="w-full bg-principal2 mt-10" />

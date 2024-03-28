@@ -1,0 +1,178 @@
+<div class="w-full flex flex-col justify-center relative">
+  <img
+    src="assets/Img/PaginaNueva/PrincipalAtico2.jpeg"
+    class="max-h-screen object-fit"
+    alt=""
+  />
+
+  <div
+    class="bg-[#EAEAEA] absolute w-[700px] top-1/4 right-72 py-20 text-[#575757] text-xl px-14 font-thin"
+  >
+    <h1
+      class="border-b border-black text-5xl text-[#575757] font-thin pb-2 mb-8 inline-block w-full"
+    >
+      EL ATICO
+    </h1>
+    <p class="mb-20">
+      Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil.
+      Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y
+      cambiar la fuente. En este espacio puedes contar tu historia y permitir a
+      tus usuarios saber más sobre ti.
+    </p>
+    <p class="">
+      Increíble vista al mar desde todas las habitaciones <br /><br />
+      A 50 pasos de la playa <br /><br />
+      Ducha externa, pileta y pileta con agua caliente <br /><br />
+      LCD, DVD, WiFi, juegos electrónicos y mucho más <br /><br />
+      Diario despertar con cantar de pájaros
+    </p>
+  </div>
+</div>
+
+<div class="py-20 flex justify-end w-full">
+  <div class="relative">
+    <img
+      src="assets/Img/PaginaNueva/SegundaAtico.JPG"
+      alt=""
+      class="w-[1200px] mr-96"
+    />
+    <div
+      class="bg-[#EAEAEA] absolute w-[700px] top-[100px] left-[-300px] py-20 text-[#575757] text-xl px-14 font-thin"
+    >
+      <h1
+        class="border-b border-black text-5xl text-[#575757] font-thin pb-2 mb-8 inline-block w-full"
+      >
+        EL ATICO
+      </h1>
+      <p class="mb-20">
+        Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil.
+        Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y
+        cambiar la fuente. En este espacio puedes contar tu historia y permitir
+        a tus usuarios saber más sobre ti.
+      </p>
+      <p class="">
+        Increíble vista al mar desde todas las habitaciones <br /><br />
+        A 50 pasos de la playa <br /><br />
+        Ducha externa, pileta y pileta con agua caliente <br /><br />
+        LCD, DVD, WiFi, juegos electrónicos y mucho más <br /><br />
+        Diario despertar con cantar de pájaros
+      </p>
+    </div>
+  </div>
+</div>
+
+<!--? Reservas -->
+<div class="w-full bg-principal2 py-10">
+  <div class="w-1/2 flex flex-col mx-auto mt-10">
+    <h1
+      class="border-b border-[#c9c9c9] pb-7 text-center mb-10 text-4xl font-thin text-[#575757]"
+    >
+      DUPLEX ATICO
+    </h1>
+    <div class="flex">
+      <img [src]="imagenGrande" class="h-[680px] img-fluid shadow-lg" />
+      <div
+        class="border border-[#c9c9c9] ml-10 p-6 text-[#575757] max-h-[450px]"
+      >
+        <div class="border-l-2 pl-3">
+          <h2 class="">Desde</h2>
+          <h2 class="text-3xl">250€</h2>
+          <h2 class="">Por noche</h2>
+        </div>
+
+        <form [formGroup]="myForm" class="flex flex-col mt-8">
+          <mat-form-field>
+            <mat-label (click)="picker.open()">Entrada - Salida</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input
+                matStartDate
+                placeholder="Inicio"
+                (click)="picker.open()"
+              />
+              <input matEndDate placeholder="Fin" (click)="picker.open()" />
+            </mat-date-range-input>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Adultos</mat-label>
+            <input
+              matInput
+              placeholder=""
+              formControlName="adultos"
+              type="number"
+              min="0"
+              max="6"
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Niños</mat-label>
+            <input
+              matInput
+              placeholder=""
+              formControlName="niños"
+              type="number"
+              min="0"
+              max="6"
+            />
+          </mat-form-field>
+          @if(myForm.hasError('totalSumExceeded')){
+          <p class="text-red-500">
+            La suma de adultos y niños no puede exceder 6.
+          </p>
+          }
+
+          <button
+            class="px-3 py-2 bg-[#B8B8B8]"
+            [disabled]="myForm.hasError('totalSumExceeded')"
+          >
+            Reservar Ahora
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="flex flex-wrap mt-8">
+      @for(imagen of imagenes; track imagen){
+      <img
+        [src]="imagen"
+        class="w-20 h-20 img-thumbnail mr-2"
+        (click)="mostrarImagen(imagen)"
+      />
+      }
+    </div>
+    <div class="flex flex-col gap-4 mt-10 text-[#575757]">
+      <div class="grid grid-cols-3 gap-4">
+        <h2 class="text-2xl">Habitación</h2>
+
+        <p>
+          Max personas 6 <br />1 cama doble <br />2 camas individuales <br />2
+          sofas cama
+        </p>
+
+        <!-- <p>Tamaño: 80m&sup2;</p> -->
+        <p>Tamaño: 80m</p>
+      </div>
+      <hr />
+      <div class="grid grid-cols-3 gap-4">
+        <h2 class="text-2xl">Mas información</h2>
+        <p class="col-span-2">
+          La Casa Rural Fundanal está ubicada en el pueblo de Hoz de Jaca, en el
+          corazón del valle de Tena. La Casa Rural Fundanal está ubicada en el
+          pueblo de Hoz de Jaca, en el corazón del valle de Tena La Casa Rural
+          Fundanal está ubicada en el pueblo de Hoz de Jaca, en el corazón del
+          valle de Tena
+        </p>
+      </div>
+      <hr />
+      <div class="grid grid-cols-3 gap-4">
+        <h2 class="text-2xl">Servicios y comodidades</h2>
+        <p class="col-span-2">07</p>
+      </div>
+    </div>
+  </div>
+</div>

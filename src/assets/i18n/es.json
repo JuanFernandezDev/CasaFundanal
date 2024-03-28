@@ -1,0 +1,18 @@
+{
+    "Home": {
+        "Menu": {
+            "Inicio": "Inicio",
+            "Contacto": "Contacto"
+        },
+        "TituloPrincipal": "Esto es la página principal de mi página web",
+        "RealizadoPor": "Realizado por: ",
+        "Deportes": [
+            {
+                "Nombre": "Futbol"
+            },
+            {
+                "Nombre": "Baloncesto"
+            }
+        ]
+    }
+}
