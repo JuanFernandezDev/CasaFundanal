@@ -16,7 +16,7 @@ export const routes: Routes = [
     path: 'casa-principal',
     loadComponent: () =>
       import('./pages/casa-principal/casa-principal.component'),
-    title: 'Casa Proncipal',
+    title: 'Casa Principal',
   },
   {
     path: 'actividades',

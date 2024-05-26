@@ -1,1 +1,273 @@
+<div class="max-w-[2100px] mx-auto">
+  <div class="w-full flex flex-col justify-center relative">
+    <img
+      src="assets/Img/PaginaNueva/CasaAbajo/Foto8.jpeg"
+      class="max-h-screen object-fit"
+      alt=""
+    />
 
+    <div
+      class="bg-[#EAEAEA] absolute w-2/4 2xl:w-1/3 top-2/5 right-20 xl:right-36 2xl:right-64 py-10 xl:py-14 px-9 xl:px-14 text-[#575757] text-base xl:text-lg font-thin"
+    >
+      <h1
+        class="border-b border-black text-4xl xl:text-5xl text-[#575757] font-thin pb-2 mb-8 inline-block w-full"
+      >
+        LA PRINCI
+      </h1>
+      <p class="mb-7 2xl:mb-14">
+        Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil.
+        Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y
+        cambiar la fuente. En este espacio puedes contar tu historia y permitir
+        a tus usuarios saber más sobre ti.
+      </p>
+      <p class="flex flex-col gap-3 2xl:gap-5">
+        <span>Increíble vista al mar desde todas las habitaciones</span>
+        <span>A 50 pasos de la playa </span>
+        <span>Ducha externa, pileta y pileta con agua caliente </span>
+        <span>LCD, DVD, WiFi, juegos electrónicos y mucho más </span>
+        <span>Diario despertar con cantar de pájaros</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="w-full">
+    <div
+      class="relative flex justify-end my-24 mx-20 2xl:mx-32 h-[500px] xl:h-[700px] 2xl:h-[800px]"
+    >
+      <img
+        src="assets/Img/PaginaNueva/CasaAbajo/Foto9.jpeg"
+        alt=""
+        class="object-fit"
+      />
+      <div
+        class="bg-[#EAEAEA] absolute w-2/5 top-8 xl:top-16 left-12 2xl:left-20 py-10 2xl:py-20 text-[#575757] text-sm xl:text-base 2xl:text-lg px-7 xl:px-14 font-thin"
+      >
+        <h1
+          class="border-b border-black text-3xl xl:text-4xl 2xl:text-5xl text-[#575757] font-thin pb-2 mb-4 xl:mb-8 inline-block w-full"
+        >
+          EL ATICO
+        </h1>
+        <p class="mb-7 2xl:mb-14">
+          Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es
+          fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu
+          contenido y cambiar la fuente. En este espacio puedes contar tu
+          historia y permitir a tus usuarios saber más sobre ti.
+        </p>
+        <p class="flex flex-col gap-1 xl:gap-3 2xl:gap-5">
+          <span>Increíble vista al mar desde todas las habitaciones</span>
+          <span>A 50 pasos de la playa </span>
+          <span>Ducha externa, pileta y pileta con agua caliente </span>
+          <span>LCD, DVD, WiFi, juegos electrónicos y mucho más </span>
+          <span>Diario despertar con cantar de pájaros</span>
+        </p>
+      </div>
+    </div>
+
+    <!--? Reservas -->
+    <div class="w-full bg-principal2 py-10">
+      <div class="flex flex-col items-center mt-10">
+        <h1
+          class="border-b border-[#c9c9c9] pb-7 text-center mb-10 text-4xl font-thin text-[#575757] w-2/4"
+        >
+          DUPLEX ATICO
+        </h1>
+
+        <div class="flex">
+          <div class="flex flex-col">
+            <img
+              [src]="imagenGrande"
+              class="h-[380px] xl:h-[480px] 2xl:h-[680px] object-scale-down"
+            />
+            <div class="flex flex-wrap mt-8">
+              @for(imagen of imagenes; track imagen){
+              <img
+                [src]="imagen"
+                class="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 img-thumbnail mr-2"
+                (click)="mostrarImagen(imagen)"
+              />
+              }
+            </div>
+          </div>
+
+          <div
+            class="border border-[#c9c9c9] ml-10 p-6 text-[#575757] max-h-[450px]"
+          >
+            <div class="border-l-2 pl-3">
+              <h2 class="text-sm 2xl:text-base">Desde</h2>
+              <h2 class="text-2xl 2:xltext-3xl">250€</h2>
+              <h2 class="text-sm 2xl:text-base">Por noche</h2>
+            </div>
+
+            <form [formGroup]="myForm" class="flex flex-col gap mt-8">
+              <mat-form-field>
+                <mat-label (click)="picker.open()" class="text-sm"
+                  >Entrada - Salida</mat-label
+                >
+                <mat-date-range-input [rangePicker]="picker">
+                  <input
+                    matStartDate
+                    placeholder="Inicio"
+                    (click)="picker.open()"
+                  />
+                  <input matEndDate placeholder="Fin" (click)="picker.open()" />
+                </mat-date-range-input>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Adultos</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  formControlName="adultos"
+                  type="number"
+                  min="0"
+                  max="6"
+                />
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Niños</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  formControlName="niños"
+                  type="number"
+                  min="0"
+                  max="6"
+                />
+              </mat-form-field>
+              @if(myForm.hasError('totalSumExceeded')){
+              <p class="text-red-500">
+                La suma de adultos y niños no puede exceder 6.
+              </p>
+              }
+
+              <button
+                class="px-3 py-2 bg-[#B8B8B8]"
+                [disabled]="myForm.hasError('totalSumExceeded')"
+              >
+                Reservar Ahora
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 mt-10 text-[#575757] w-3/4 2xl:w-4/6">
+          <div class="grid grid-cols-3 gap-4">
+            <h2 class="text-2xl">Habitación</h2>
+
+            <p>
+              <span class="font-bold">Numero de personas:</span> 6 <br /><span
+                class="font-bold"
+                >Dormitorio 1:</span
+              >
+              1 cama doble <br /><span class="font-bold">Dormitorio 2:</span> 2
+              camas individuales <br />
+              <span class="font-bold">Dormitorio 3:</span> 2 sofas cama
+            </p>
+
+            <!-- <p>Tamaño: 80m&sup2;</p> -->
+            <!-- <p>
+            Apartamento entero, Tamaño: 80m, Cocina privada, Lavavajillas, Vistas
+            a la montaña, Terraza, Television, Cafetera, 2 Baños privados
+          </p> -->
+          </div>
+          <hr class="border-1 border-[#c9c9c9]" />
+          <div class="grid grid-cols-3 gap-4">
+            <h2 class="text-2xl">Mas información</h2>
+            <p class="col-span-2">
+              La Casa Rural Fundanal, un encantador refugio situado en el
+              pintoresco pueblo de Hoz de Jaca, ofrece a sus visitantes una
+              experiencia única en el corazón del valle de Tena. Rodeada de
+              impresionantes paisajes montañosos y una atmósfera tranquila, esta
+              acogedora casa rural es el destino ideal para aquellos que buscan
+              escapar del bullicio de la ciudad y sumergirse en la serenidad de
+              la naturaleza.
+            </p>
+          </div>
+          <hr class="border-1 border-[#c9c9c9]" />
+          <div class="grid grid-cols-3 gap-4">
+            <h2 class="text-2xl">Servicios y comodidades</h2>
+            <p class="col-span-2 flex flex-wrap">
+              <span class="flex"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/casa.png"
+                  alt=""
+                />Apartamento entero,</span
+              >
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/metro-cuadrado.png"
+                  alt=""
+                />Tamaño: 80m,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/cocina.png"
+                  alt=""
+                />Cocina privada,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/lavavajillas.png"
+                  alt=""
+                />Lavavajillas,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/jacuzzi.png"
+                  alt=""
+                />Jacuzzi
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/montana.png"
+                  alt=""
+                />Vistas a la montaña,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/terraza.png"
+                  alt=""
+                />Terraza,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/television.png"
+                  alt=""
+                />Television,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/cafetera.png"
+                  alt=""
+                />Cafetera,
+              </span>
+              <span class="flex ml-2"
+                ><img
+                  class="w-6 h-6 object-scale-down"
+                  src="assets/Img/Iconos/cuarto-de-bano.png"
+                  alt=""
+                />2 Baños privados
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
