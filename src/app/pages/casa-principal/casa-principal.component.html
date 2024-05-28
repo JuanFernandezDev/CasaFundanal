@@ -73,11 +73,53 @@
         </h1>
 
         <div class="flex">
-          <div class="flex flex-col">
+          <div class="relative flex flex-col items-center">
+            <!-- Flecha izquierda -->
+            <div
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10"
+              (click)="cambiarImagen('anterior')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </div>
+            <!-- Imagen principal -->
             <img
               [src]="imagenGrande"
               class="h-[380px] xl:h-[480px] 2xl:h-[680px] object-scale-down"
             />
+            <!-- Flecha derecha -->
+            <div
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10"
+              (click)="cambiarImagen('siguiente')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+            <!-- Miniaturas -->
             <div class="flex flex-wrap mt-8">
               @for(imagen of imagenes; track imagen){
               <img
@@ -126,7 +168,7 @@
                   formControlName="adultos"
                   type="number"
                   min="0"
-                  max="6"
+                  max="8"
                 />
               </mat-form-field>
 
@@ -138,12 +180,12 @@
                   formControlName="niños"
                   type="number"
                   min="0"
-                  max="6"
+                  max="8"
                 />
               </mat-form-field>
               @if(myForm.hasError('totalSumExceeded')){
               <p class="text-red-500">
-                La suma de adultos y niños no puede exceder 6.
+                La suma de adultos y niños no puede exceder 8 personas.
               </p>
               }
 
@@ -162,13 +204,15 @@
             <h2 class="text-2xl">Habitación</h2>
 
             <p>
-              <span class="font-bold">Numero de personas:</span> 6 <br /><span
+              <span class="font-bold">Numero de personas:</span> 8 <br /><span
                 class="font-bold"
                 >Dormitorio 1:</span
               >
-              1 cama doble <br /><span class="font-bold">Dormitorio 2:</span> 2
-              camas individuales <br />
-              <span class="font-bold">Dormitorio 3:</span> 2 sofas cama
+              1 cama doble <br /><span class="font-bold">Dormitorio 2:</span> 1
+              cama doble <br />
+              <span class="font-bold">Dormitorio 3:</span> 2 camas individuales
+              <br />
+              <span class="font-bold">Dormitorio 4:</span> 1 sofa cama
             </p>
 
             <!-- <p>Tamaño: 80m&sup2;</p> -->

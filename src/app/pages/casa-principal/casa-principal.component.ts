@@ -45,11 +45,11 @@ export default class CasaPrincipalComponent {
       {
         adultos: [
           '',
-          [Validators.required, Validators.min(0), Validators.max(6)],
+          [Validators.required, Validators.min(0), Validators.max(8)],
         ],
         niños: [
           '',
-          [Validators.required, Validators.min(0), Validators.max(6)],
+          [Validators.required, Validators.min(0), Validators.max(8)],
         ],
       },
       { validators: this.totalSumValidator }
@@ -60,6 +60,23 @@ export default class CasaPrincipalComponent {
     const adultosValue = form.get('adultos')?.value || 0;
     const niñosValue = form.get('niños')?.value || 0;
     const total = adultosValue + niñosValue;
-    return total <= 6 ? null : { totalSumExceeded: true };
+    return total <= 8 ? null : { totalSumExceeded: true };
+  }
+
+  cambiarImagen(direccion: 'anterior' | 'siguiente'): void {
+    const indexActual = this.imagenes.indexOf(this.imagenGrande);
+    if (direccion === 'anterior') {
+      const nuevoIndex =
+        indexActual === 0 ? this.imagenes.length - 1 : indexActual - 1;
+      this.imagenGrande = this.imagenes[nuevoIndex];
+    } else {
+      const nuevoIndex =
+        indexActual === this.imagenes.length - 1 ? 0 : indexActual + 1;
+      this.imagenGrande = this.imagenes[nuevoIndex];
+    }
+  }
+
+  trackByFn(index: number, item: string): number {
+    return index;
   }
 }
