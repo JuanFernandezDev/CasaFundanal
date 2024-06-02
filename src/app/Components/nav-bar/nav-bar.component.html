@@ -1,56 +1,7 @@
-<!-- <nav
-  class="py-6 relativ bg-principal2 font-montserrat flex justify-around items-center"
->
-  <a href="#" class="text-xl font-normal">La Casa Fundanal</a>
-
-  <div class="mobile:hidden relative">
-    <button>
-      <button (click)="toggleMenu()" class="focus:outline-none">
-        <img src="assets/Img/Iconos/menu.png" alt="Menu" class="h-6 w-6" />
-      </button>
-    </button>
-    <div class="flex flex-col bg-white">
-      <a routerLink="/" class="py-1">INICIO</a>
-      <a routerLink="/casa-atico" class="py-1">ÁTICO DUPLEX</a>
-      <a routerLink="/casa-principal" class="py-1">LA PRINCIPAL</a>
-    </div>
-  </div>
-
-  <div class="hidden mobile:flex">
-    <div class="text-sm lg:text-base flex flex-row items-center">
-      <div>
-        <a routerLink="/" class="py-1">INICIO</a>
-        <a routerLink="/casa-atico" class="py-1 ml-5">ÁTICO DUPLEX</a>
-        <a routerLink="/casa-principal" class="py-1 ml-5 mx-5">LA PRINCIPAL</a>
-      </div>
-
-      <div class="group flex w-24 flex-col">
-        <button
-          class="outline-none border px-3 py-1 border-fondo2 focus:outline-none flex items-center justify-between w-full"
-        >
-          <span class="">ES</span>
-          <span>
-            <img
-              class="fill-current object-fit h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
-              src="assets\Img\flecha-abajo.png"
-            />
-          </span>
-        </button>
-        <ul
-          id=""
-          class="absolute top-[58px] z-0 border border-t-0 border-fondo2 w-24 px-3 py-1 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out"
-        >
-          <li id="" class=""><a href="">EN</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
- -->
 <nav
-  class="py-6 px-5 bg-principal2 font-montserrat flex justify-around items-center relative"
+  class="py-6 px-5 bg-principal2 font-montserrat flex justify-between items-center relative"
 >
-  <a href="#" class="text-xl font-normal">La Casa Fundanal</a>
+  <a href="#" class="text-xl font-normal">Casa Fundanal</a>
 
   <!-- Botón del menú en tamaño móvil -->
   <button (click)="toggleMenu()" class="block sm:hidden focus:outline-none">
@@ -62,8 +13,8 @@
     <div class="text-sm lg:text-base flex items-center">
       <div>
         <a routerLink="/" class="py-1 ml-5">INICIO</a>
-        <a routerLink="/casa-atico" class="py-1 ml-5">ÁTICO DUPLEX</a>
         <a routerLink="/casa-principal" class="py-1 ml-5">LA PRINCIPAL</a>
+        <a routerLink="/casa-atico" class="py-1 ml-5">ÁTICO DUPLEX</a>
       </div>
       <div class="group flex flex-col ml-5">
         <button
@@ -95,11 +46,11 @@
         <img src="assets/Img/Iconos/x.png" alt="Close" class="h-6 w-6" />
       </button>
       <a routerLink="/" class="py-1" (click)="closeMenu()">INICIO</a>
-      <a routerLink="/casa-atico" class="py-1" (click)="closeMenu()"
-        >ÁTICO DUPLEX</a
-      >
       <a routerLink="/casa-principal" class="py-1" (click)="closeMenu()"
         >LA PRINCIPAL</a
+      >
+      <a routerLink="/casa-atico" class="py-1" (click)="closeMenu()"
+        >ÁTICO DUPLEX</a
       >
     </div>
   </div>

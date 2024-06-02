@@ -55,7 +55,18 @@ export default class CasaAticoComponent {
       { validators: this.totalSumValidator }
     );
   }
-
+  cambiarImagen(direccion: 'anterior' | 'siguiente'): void {
+    const indexActual = this.imagenes.indexOf(this.imagenGrande);
+    if (direccion === 'anterior') {
+      const nuevoIndex =
+        indexActual === 0 ? this.imagenes.length - 1 : indexActual - 1;
+      this.imagenGrande = this.imagenes[nuevoIndex];
+    } else {
+      const nuevoIndex =
+        indexActual === this.imagenes.length - 1 ? 0 : indexActual + 1;
+      this.imagenGrande = this.imagenes[nuevoIndex];
+    }
+  }
   totalSumValidator(form: FormGroup) {
     const adultosValue = form.get('adultos')?.value || 0;
     const niñosValue = form.get('niños')?.value || 0;

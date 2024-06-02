@@ -7,20 +7,21 @@
     />
 
     <div
-      class="bg-[#EAEAEA] absolute w-2/4 2xl:w-1/3 top-2/5 right-20 xl:right-36 2xl:right-64 py-10 xl:py-14 px-9 xl:px-14 text-[#575757] text-base xl:text-lg font-thin"
+      class="bg-[#EAEAEA] absolute w-2/4 2xl:w-1/3 top-2/5 right-10 sm:right-20 xl:right-36 2xl:right-64 py-3 sm:py-6 lg:py-10 xl:py-14 px-5 sm:px-9 xl:px-14 text-[#575757] text-xs sm:text-sm lg:text-base xl:text-lg font-thin"
     >
       <h1
-        class="border-b border-black text-4xl xl:text-5xl text-[#575757] font-thin pb-2 mb-8 inline-block w-full"
+        class="border-b border-black text-lg tablet:text-4xl xl:text-5xl text-[#575757] font-thin pb-2 mb-3 tablet:mb-8 inline-block w-full"
       >
-        EL ATICO
+        LA PRINCI
       </h1>
-      <p class="mb-7 2xl:mb-14">
+      <p class="mb-3 tablet:mb-7 2xl:mb-14">
         Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil.
+        <br class="block sm:hidden" />
         Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y
         cambiar la fuente. En este espacio puedes contar tu historia y permitir
         a tus usuarios saber más sobre ti.
       </p>
-      <p class="flex flex-col gap-3 2xl:gap-5">
+      <p class="hidden sm:flex flex-col gap-3 2xl:gap-5">
         <span>Increíble vista al mar desde todas las habitaciones</span>
         <span>A 50 pasos de la playa </span>
         <span>Ducha externa, pileta y pileta con agua caliente </span>
@@ -32,7 +33,7 @@
 
   <div class="w-full">
     <div
-      class="relative flex justify-end my-24 mx-20 2xl:mx-32 h-[500px] xl:h-[700px] 2xl:h-[800px]"
+      class="relative flex justify-end my-24 mx-3 sm:mx-7 tablet:mx-10 lg:mx-20 2xl:mx-32 sm:h-[500px] xl:h-[700px] 2xl:h-[800px]"
     >
       <img
         src="assets/Img/PaginaNueva/SegundaAtico.JPG"
@@ -40,20 +41,21 @@
         class="object-fit"
       />
       <div
-        class="bg-[#EAEAEA] absolute w-2/5 top-8 xl:top-16 left-12 2xl:left-20 py-10 2xl:py-20 text-[#575757] text-sm xl:text-base 2xl:text-lg px-7 xl:px-14 font-thin"
+        class="bg-[#EAEAEA] absolute w-2/4 tablet:w-2/5 top-8 xl:top-16 left-0 sm:left-6 lg:left-12 2xl:left-20 py-3 sm:py-5 lg:py-10 2xl:py-20 text-[#575757] text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-lg px-3 sm:px-7 xl:px-14 font-thin"
       >
         <h1
-          class="border-b border-black text-3xl xl:text-4xl 2xl:text-5xl text-[#575757] font-thin pb-2 mb-4 xl:mb-8 inline-block w-full"
+          class="border-b border-black text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl text-[#575757] font-thin pb-1 sm:pb-2 mb-2 sm:mb-4 xl:mb-8 inline-block w-full"
         >
           EL ATICO
         </h1>
-        <p class="mb-7 2xl:mb-14">
+        <p class="sm:mb-4 lg:mb-7 2xl:mb-14">
           Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es
           fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu
-          contenido y cambiar la fuente. En este espacio puedes contar tu
-          historia y permitir a tus usuarios saber más sobre ti.
+          contenido y cambiar la fuente.<br class="block sm:hidden" />
+          En este espacio puedes contar tu historia y permitir a tus usuarios
+          saber más sobre ti.
         </p>
-        <p class="flex flex-col gap-1 xl:gap-3 2xl:gap-5">
+        <p class="hidden sm:flex flex-col gap-1 xl:gap-3 2xl:gap-5">
           <span>Increíble vista al mar desde todas las habitaciones</span>
           <span>A 50 pasos de la playa </span>
           <span>Ducha externa, pileta y pileta con agua caliente </span>
@@ -72,17 +74,61 @@
           DUPLEX ATICO
         </h1>
 
-        <div class="flex">
-          <div class="flex flex-col">
+        <div class="flex flex-wrap">
+          <div class="relative flex flex-col items-center">
+            <!-- Flecha izquierda -->
+            <div
+              class="absolute left-0 top-[200px] sm:top-1/2 transform -translate-y-1/2 cursor-pointer z-10"
+              (click)="cambiarImagen('anterior')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </div>
+            <!-- Imagen principal -->
             <img
               [src]="imagenGrande"
               class="h-[380px] xl:h-[480px] 2xl:h-[680px] object-scale-down"
             />
-            <div class="flex flex-wrap mt-8">
+            <!-- Flecha derecha -->
+            <div
+              class="absolute right-0 top-[200px] sm:top-1/2 transform -translate-y-1/2 cursor-pointer z-10"
+              (click)="cambiarImagen('siguiente')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+            <!-- Miniaturas -->
+            <div
+              class="flex flex-wrap mx-auto sm:mt-8 mb-2 sm:mb-0 justify-center"
+            >
               @for(imagen of imagenes; track imagen){
               <img
                 [src]="imagen"
-                class="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 img-thumbnail mr-2"
+                class="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 img-thumbnail mr-2 mt-2 sm:mt-0"
                 (click)="mostrarImagen(imagen)"
               />
               }
@@ -90,7 +136,7 @@
           </div>
 
           <div
-            class="border border-[#c9c9c9] ml-10 p-6 text-[#575757] max-h-[450px]"
+            class="border border-[#c9c9c9] ml-12 sm:ml-10 p-6 text-[#575757] max-h-[450px]"
           >
             <div class="border-l-2 pl-3">
               <h2 class="text-sm 2xl:text-base">Desde</h2>
@@ -142,7 +188,7 @@
                 />
               </mat-form-field>
               @if(myForm.hasError('totalSumExceeded')){
-              <p class="text-red-500">
+              <p class="text-red-500 text-xs">
                 La suma de adultos y niños no puede exceder 6.
               </p>
               }
@@ -158,7 +204,7 @@
         </div>
 
         <div class="flex flex-col gap-4 mt-10 text-[#575757] w-3/4 2xl:w-4/6">
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid grid-row-2 sm:grid-cols-3 gap-4">
             <h2 class="text-2xl">Habitación</h2>
 
             <p>
@@ -178,7 +224,7 @@
         </p> -->
           </div>
           <hr class="border-1 border-[#c9c9c9]" />
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid grid-row-2 sm:grid-cols-3 gap-4">
             <h2 class="text-2xl">Mas información</h2>
             <p class="col-span-2">
               La Casa Rural Fundanal, un encantador refugio situado en el
@@ -191,9 +237,9 @@
             </p>
           </div>
           <hr class="border-1 border-[#c9c9c9]" />
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid grid-row-2 sm:grid-cols-3 gap-4">
             <h2 class="text-2xl">Servicios y comodidades</h2>
-            <p class="col-span-2 flex flex-wrap">
+            <p class="col-span-2 flex flex-wrap gap-1">
               <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
@@ -201,56 +247,56 @@
                   alt=""
                 />Apartamento entero,</span
               >
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/metro-cuadrado.png"
                   alt=""
                 />Tamaño: 80m,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/cocina.png"
                   alt=""
                 />Cocina privada,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/lavavajillas.png"
                   alt=""
                 />Lavavajillas,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/montana.png"
                   alt=""
                 />Vistas a la montaña,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/terraza.png"
                   alt=""
                 />Terraza,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/television.png"
                   alt=""
                 />Television,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/cafetera.png"
                   alt=""
                 />Cafetera,
               </span>
-              <span class="flex ml-2"
+              <span class="flex"
                 ><img
                   class="w-6 h-6 object-scale-down"
                   src="assets/Img/Iconos/cuarto-de-bano.png"
