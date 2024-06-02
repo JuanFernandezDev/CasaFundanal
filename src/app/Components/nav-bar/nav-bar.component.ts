@@ -8,4 +8,14 @@ import { RouterModule } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styles: ``,
 })
-export class NavBarComponent {}
+export class NavBarComponent {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+  closeMenu() {
+    this.isMenuOpen = false;
+    console.log('Entra');
+  }
+}
