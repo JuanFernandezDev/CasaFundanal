@@ -1,18 +1,26 @@
 {
-    "Home": {
-        "Menu": {
-            "Inicio": "Inicio",
-            "Contacto": "Contacto"
-        },
-        "TituloPrincipal": "Esto es la página principal de mi página web",
-        "RealizadoPor": "Realizado por: ",
-        "Deportes": [
-            {
-                "Nombre": "Futbol"
-            },
-            {
-                "Nombre": "Baloncesto"
-            }
-        ]
+  "paginaPrincipal": {
+    "menu": {
+      "inicio": "INICIO",
+      "principal": "ÁTICO DÚPLEX",
+      "duplex": "DÚPLEX JACUZZI"
+    },
+    "tituloPrincipal": "UN HOGAR EN HOZ DE JACA",
+    "descripcionPrincipal": "El mejor sitio para descansar y disfrutar de la naturaleza con tus familiares y amigos",
+    "actividades": {
+      "titulo": "DISFRUTA DE LAS POSIBILIDADES DEL ENTORNO",
+      "tituloActividades": "Disfruta de actividades",
+      "textoActividades": "Disfruta de actividades en Kayak",
+      "tituloRutas": "Rutas inolvidables",
+      "textoRutas": "Explora rutas inolvidables",
+      "tituloGastronomia": "Gastronomía",
+      "textoGastronomia": "Disfruta de la gastronomía local"
+    },
+    "mapa": {
+      "titulo": "¿DÓNDE ESTAMOS?",
+      "descripcion": "La Casa Rural Fundanal está ubicada en el pueblo de Hoz de Jaca, en el corazón del valle de Tena.",
+      "direccion": "Calle Fundanal 4, 22662, Hoz de Jaca, Aragón.",
+      "dudas": "¿Tienes alguna pregunta? Llámanos al: (+34) 608 578 001 o contacta con casaruralhozdejaca@gmail.com"
     }
+  }
 }

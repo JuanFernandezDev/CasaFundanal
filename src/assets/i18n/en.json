@@ -1,8 +1,9 @@
 {
-  "Home": {
-    "Menu": {
-      "Inicio": "Index",
-      "Contacto": "Contact"
+  "paginaPrincipal": {
+    "menu": {
+      "inicio": "Home",
+      "principal": "Contact",
+      "duplex": "Contact"
     },
     "TituloPrincipal": "Main Page from my web",
     "RealizadoPor": "Made by: ",
